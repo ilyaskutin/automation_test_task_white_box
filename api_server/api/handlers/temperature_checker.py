@@ -1,13 +1,14 @@
 import json
+
+from api_server.api.handlers.basic_handlers import JSONHandler
 from tornado.gen import coroutine
 from tornado.web import HTTPError
 from voluptuous.error import Invalid
 
-from api.handlers.basic_handlers import JSONHandler
-from api.schema import temperature_validator
+from api_server.api.schema import temperature_validator
 
 TEMPERATURE_SCALE_SYSTEM = {
-    'K': 'Celsius',
+    'K': 'Celsius',  # TODO: maybe this wrong?
     'C': 'Kelvin',
     'F': 'fahrenheit'
 }
