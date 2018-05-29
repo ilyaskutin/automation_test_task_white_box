@@ -6,3 +6,9 @@
 
 # venv folder
 venv
+
+# some logs
+*.log
+
+# html files
+*.html

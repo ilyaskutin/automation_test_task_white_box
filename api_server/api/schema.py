@@ -8,7 +8,7 @@ from voluptuous.schema_builder import message
 @message('expected an Temperature', cls=ValueInvalid)
 def Temperature(v):
     TEMPERATURE_REGEX = re.compile(
-        r'^[-+]?\d{1,10}(\.\d*)?\w?$',  # work with float
+        r'^[-+]?\d{1,10}(\.\d*)?[CFK]?$',  # work with float
         re.IGNORECASE
     )
 
@@ -17,4 +17,4 @@ def Temperature(v):
     return v
 
 
-temperature_validator = All(Temperature(), Length(max=10))
+temperature_validator = All(Temperature(), Length(max=20))
